@@ -4,6 +4,14 @@ A minimal AMQP server ping tool. It tries to ping the AMQP
 server, then exits with zero status. If the server isn't responding it
 exits with nonzero status after making a configured number of attempts.
 
+## Installation from the source with OPAM
+
+```
+$ git clone https://github.com/argent-smith/amqping.git
+$ cd amqping
+$ opam install -y .
+```
+
 ## Synopsis
 
 `amqping [OPTION]...`
