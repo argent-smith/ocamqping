@@ -1,0 +1,21 @@
+version: 2.1
+
+orbs:
+  opam: argent-smith/opam@dev:93e22eb
+
+executors:
+  opam: opam/default
+
+x-job-defaults: &job_defaults
+  executor:
+    name: opam
+    image: ocaml/opam
+    tag: alpine-ocaml-4.11
+  depext_pkgs: conf-m4
+
+workflows:
+  ci:
+    jobs:
+      - opam/build_package:
+          <<: *job_defaults
+          opam_upgrade: true

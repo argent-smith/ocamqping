@@ -1,3 +1,5 @@
+[![argent-smith](https://circleci.com/gh/argent-smith/amqping.svg?style=shield)](https://circleci.com/gh/argent-smith/amqping)
+
 # amqping
 
 A minimal AMQP server ping tool. It tries to ping the AMQP
