@@ -2,7 +2,7 @@ open Cmdliner
 
 let info =
   let version = "%%VERSION%%"
-  and doc = "A simple AMQP server ping tool. It tries to \
+  and doc = "A minimal AMQP server ping tool. It tries to \
              ping the AMQP server, then exits with zero status. \
              If the server isn't responding it exits with nonzero status \
              after making a configured number of attempts."
