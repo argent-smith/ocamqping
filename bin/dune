@@ -1,0 +1,12 @@
+(executable
+ (public_name amqping)
+ (name main)
+ (preprocess (pps lwt_ppx ppx_jane))
+ (flags (-safe-string))
+ (libraries amqping cmdliner)
+ (ocamlopt_flags (:standard (:include ocamlopt_flags.sexp))))
+
+(rule
+ (targets ocamlopt_flags.sexp)
+ (deps (:discover config/discover.exe))
+ (action (run %{discover})))
