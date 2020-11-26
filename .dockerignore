@@ -1,0 +1,5 @@
+.git
+.circleci
+.vscode
+_opam
+_build
