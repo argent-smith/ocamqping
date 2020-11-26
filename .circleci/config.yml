@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  opam: argent-smith/opam@dev:93e22eb
+  opam: argent-smith/opam@1.1.0
 
 executors:
   opam: opam/default
