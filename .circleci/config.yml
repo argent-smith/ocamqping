@@ -3,7 +3,7 @@ version: 2.1
 parameters:
   image:
     type: string
-    default: argentoff/amqping
+    default: argentoff/ocamqping
 
 orbs:
   opam: argent-smith/opam@1.1.0

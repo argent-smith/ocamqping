@@ -1,6 +1,6 @@
 [![argent-smith](https://circleci.com/gh/argent-smith/ocamqping.svg?style=shield)](https://circleci.com/gh/argent-smith/ocamqping)
 
-# ocamqping
+# OCamqping
 
 A minimalistic AMQP server ping tool. It tries to ping the AMQP
 server, then exits with zero status. If the server isn't responding it
@@ -50,7 +50,7 @@ $ opam install -y .
       Show version information.
 
 ## Environment
-These environment variables affect the execution of amqping:
+These environment variables affect the execution of ocamqping:
 
 * `AMQPING_RETRY_COUNT` See option --retry-count.
 

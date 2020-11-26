@@ -14,21 +14,21 @@ RUN eval `opam env` && \
     opam depext conf-m4 && \
     opam install . -y && \
     opam clean && \
-    cp `which amqping` .
+    cp `which ocamqping` .
 
 FROM busybox:1.32.0 as build-users
-RUN addgroup -S amqping \
+RUN addgroup -S ocamqping \
     && adduser \
        -S \
        -D \
        -H \
-       -G amqping \
-       amqping
+       -G ocamqping \
+       ocamqping
 
 FROM scratch
 LABEL maintainer="Pavel Argentov (argentoff@gmail.com)"
 COPY --from=build-users /etc/group /etc/group
 COPY --from=build-users /etc/passwd /etc/passwd
-COPY --from=build-app /home/opam/project/amqping /
-USER amqping
-ENTRYPOINT ["/amqping"]
+COPY --from=build-app /home/opam/project/ocamqping /
+USER ocamqping
+ENTRYPOINT ["/ocamqping"]
