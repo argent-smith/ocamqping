@@ -7,7 +7,7 @@ let info =
              If the server isn't responding it exits with nonzero status \
              after making a configured number of attempts."
   in
-  Term.info "amqping" ~version ~doc
+  Term.info "ocamqping" ~version ~doc
 
 let amqp_uri =
   let doc = "AMQP server host"
@@ -19,14 +19,14 @@ let amqp_uri =
   let retry_interval =
     let doc = "Ping retry interval in seconds"
     and default = 1
-    and env = Arg.env_var "AMQPING_RETRY_INTERVAL"
+    and env = Arg.env_var "OCAMQPING_RETRY_INTERVAL"
     in
     Arg.(value & opt int default & info ["i"; "retry-interval"] ~env ~doc)
 
 let retry_count =
   let doc = "Ping retry count"
   and default = 255
-  and env = Arg.env_var "AMQPING_RETRY_COUNT"
+  and env = Arg.env_var "OCAMQPING_RETRY_COUNT"
   in
   Arg.(value & opt int default & info ["r"; "retry-count"] ~env ~doc)
 

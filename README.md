@@ -1,28 +1,28 @@
-[![argent-smith](https://circleci.com/gh/argent-smith/amqping.svg?style=shield)](https://circleci.com/gh/argent-smith/amqping)
+[![argent-smith](https://circleci.com/gh/argent-smith/ocamqping.svg?style=shield)](https://circleci.com/gh/argent-smith/ocamqping)
 
-# amqping
+# OCamqping
 
-A minimal AMQP server ping tool. It tries to ping the AMQP
+A minimalistic AMQP server ping tool. It tries to ping the AMQP
 server, then exits with zero status. If the server isn't responding it
 exits with nonzero status after making a configured number of attempts.
 
 ## Dockerized binary distribution
 
-[argentoff/amqping](https://hub.docker.com/repository/docker/argentoff/amqping)
+[argentoff/ocamqping](https://hub.docker.com/repository/docker/argentoff/ocamqping)
 
 This may be used as a stage image to get the statically linked binary from.
 
 ## Installation from the source with OPAM
 
 ```
-$ git clone https://github.com/argent-smith/amqping.git
-$ cd amqping
+$ git clone https://github.com/argent-smith/ocamqping.git
+$ cd ocamqping
 $ opam install -y .
 ```
 
 ## Synopsis
 
-`amqping [OPTION]...`
+`ocamqping [OPTION]...`
 
 ## Logging options
   * -P, --log-process (absent LOG_PROCESS env)
@@ -50,7 +50,7 @@ $ opam install -y .
       Show version information.
 
 ## Environment
-These environment variables affect the execution of amqping:
+These environment variables affect the execution of ocamqping:
 
 * `AMQPING_RETRY_COUNT` See option --retry-count.
 

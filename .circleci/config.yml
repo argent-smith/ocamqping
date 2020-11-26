@@ -3,7 +3,7 @@ version: 2.1
 parameters:
   image:
     type: string
-    default: argentoff/amqping
+    default: argentoff/ocamqping
 
 orbs:
   opam: argent-smith/opam@1.1.0
@@ -26,12 +26,9 @@ workflows:
           <<: *job_defaults
           opam_upgrade: true
       - docker/publish:
-          requires:
-            - opam/build_package
           image: << pipeline.parameters.image >>
           lint-dockerfile: true
-          update-description: true
-          tag: $CIRCLE_TAG, latest
+          tag: '$CIRCLE_TAG,latest'
           filters:
             tags:
               only: /^v.*/

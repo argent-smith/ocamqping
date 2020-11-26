@@ -1,12 +1,12 @@
 opam-version: "2.0"
-name: "amqping"
+name: "ocamqping"
 version: "~dev"
 synopsis: "AMQP server ping tool"
 maintainer: "Pavel Argentov <argentoff@gmail.com>"
 authors: "Pavel Argentov <argentoff@gmail.com>"
 license: "MIT"
-homepage: "https://github.com/argent-smith/amqping"
-bug-reports: "https://github.com/argent-smith/amqping/issues"
+homepage: "https://github.com/argent-smith/ocamqping"
+bug-reports: "https://github.com/argent-smith/ocamqping/issues"
 depends: [
   "ocaml" {build & >= "4.04"}
   "dune" {build & >= "1.1.1"}
@@ -25,7 +25,7 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
 ]
 run-test: ["dune" "runtest" "-p" name]
-dev-repo: "git+https://github.com/argent-smith/amqping"
+dev-repo: "git+https://github.com/argent-smith/ocamqping"
 pin-depends: [
   ["ag_logger.0.0.1" "git+https://github.com/argent-smith/ag_logger.git"]
 ]

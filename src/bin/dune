@@ -1,9 +1,9 @@
 (executable
- (public_name amqping)
+ (public_name ocamqping)
  (name main)
  (preprocess (pps lwt_ppx ppx_jane))
  (flags (-safe-string))
- (libraries amqping cmdliner)
+ (libraries ocamqping cmdliner)
  (ocamlopt_flags (:standard (:include ocamlopt_flags.sexp))))
 
 (rule

@@ -1,5 +1,5 @@
 (library
- (name amqping)
+ (name ocamqping)
  (wrapped false)
  (libraries ag_logger
             lwt
