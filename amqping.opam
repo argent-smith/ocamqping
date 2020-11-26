@@ -15,8 +15,6 @@ depends: [
   "ppx_jane" {build}
   "cmdliner" {build}
   "amqp-client-lwt" {build}
-  "alcotest" {with-test}
-  "alcotest-lwt" {with-test}
   "ag_logger" {build & = "0.0.1"}
   "merlin" {post}
   "ocaml-lsp-server" {post}
