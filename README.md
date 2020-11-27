@@ -53,10 +53,10 @@ $ opam install -y .
     `pager`, `groff` or `plain`. With `auto`, the format is `pager` or
     `plain` whenever the TERM env var is `dumb` or undefined.
 
-  * -i VAL, --retry-interval=VAL (absent=1 or AMQPING_RETRY_INTERVAL env)
+  * -i VAL, --retry-interval=VAL (absent=1 or OCAMQPING_RETRY_INTERVAL env)
     Ping retry interval in seconds
 
-  * -r VAL, --retry-count=VAL (absent=255 or AMQPING_RETRY_COUNT env)
+  * -r VAL, --retry-count=VAL (absent=255 or OCAMQPING_RETRY_COUNT env)
     Ping retry count
 
   * -u VAL, --amqp-uri=VAL (absent=amqp://localhost/ or AMQP_URI env)
