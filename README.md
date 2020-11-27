@@ -12,6 +12,22 @@ exits with nonzero status after making a configured number of attempts.
 
 This may be used as a stage image to get the statically linked binary from.
 
+## Docker installation example
+
+```dockerfile
+FROM argentoff/ocamqping as ocamqping
+FROM other_base_image
+
+RUN something important
+
+WORKDIR /app
+
+COPY --from=ocamqping /ocamqping /sbin/
+
+COPY . .
+RUN something also important
+```
+
 ## Installation from the source with OPAM
 
 ```
