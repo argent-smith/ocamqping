@@ -68,9 +68,9 @@ $ opam install -y .
 ## Environment
 These environment variables affect the execution of ocamqping:
 
-* `AMQPING_RETRY_COUNT` See option --retry-count.
+* `OCAMQPING_RETRY_COUNT` See option --retry-count.
 
-* `AMQPING_RETRY_INTERVAL` — See option --retry-interval.
+* `OCAMQPING_RETRY_INTERVAL` — See option --retry-interval.
 
 * `AMQP_URI` — See option --amqp-uri.
 
