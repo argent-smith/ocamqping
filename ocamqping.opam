@@ -15,7 +15,7 @@ depends: [
   "ppx_jane" {build}
   "cmdliner" {build}
   "amqp-client-lwt" {build}
-  "ag_logger" {build & = "0.0.1"}
+  "ag_logger" {build}
   "merlin" {post}
   "ocaml-lsp-server" {post}
   "ocamlformat" {post}
@@ -27,5 +27,5 @@ build: [
 run-test: ["dune" "runtest" "-p" name]
 dev-repo: "git+https://github.com/argent-smith/ocamqping"
 pin-depends: [
-  ["ag_logger.0.0.1" "git+https://github.com/argent-smith/ag_logger.git"]
+  ["ag_logger.~dev" "git+https://github.com/argent-smith/ag_logger.git"]
 ]
