@@ -41,28 +41,35 @@ $ opam install -y .
 `ocamqping [OPTION]...`
 
 ## Logging options
-  * -P, --log-process (absent LOG_PROCESS env)
+  * `-P`, `--log-process` (absent `LOG_PROCESS` env)
       Whether to add process info (name & pid) to log messages.
 
   * -T, --log-times (absent LOG_TIMES env)
       Whether to timestamp log messages.
 
 ## Options
-  * --help[=FMT] (default=auto)
+  * `--help[=FMT]` (default=`auto`)
     Show this help in format FMT. The value FMT must be one of `auto`,
     `pager`, `groff` or `plain`. With `auto`, the format is `pager` or
     `plain` whenever the TERM env var is `dumb` or undefined.
 
-  * -i VAL, --retry-interval=VAL (absent=1 or OCAMQPING_RETRY_INTERVAL env)
+  * `-i VAL`, `--retry-interval=VAL` (absent=`1` or `OCAMQPING_RETRY_INTERVAL` env)
     Ping retry interval in seconds
 
-  * -r VAL, --retry-count=VAL (absent=255 or OCAMQPING_RETRY_COUNT env)
+  * `-q`, `--quiet`
+    Be quiet. Takes over `--verbosity`.
+
+  * `-r VAL`, `--retry-count=VAL` (absent=`255` or `OCAMQPING_RETRY_COUNT` env)
     Ping retry count
 
-  * -u VAL, --amqp-uri=VAL (absent=amqp://localhost/ or AMQP_URI env)
-      AMQP server host
+  * `-u VAL`, `--amqp-uri=VAL` (absent=`amqp://localhost/` or `AMQP_URI` env)
+      AMQP server URI
 
-  * --version
+  * `--verbosity=LEVEL` (absent=`info` or `LOG_VERBOSITY` env)
+    Be more or less verbose. LEVEL must be one of `quiet`, `error`,
+    `warning`, `info` or `debug`.
+
+  * `--version`
       Show version information.
 
 ## Environment

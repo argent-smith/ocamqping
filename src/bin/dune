@@ -3,7 +3,7 @@
  (name main)
  (preprocess (pps lwt_ppx ppx_jane))
  (flags (-safe-string))
- (libraries ocamqping cmdliner)
+ (libraries ocamqping cmdliner base)
  (ocamlopt_flags (:standard (:include ocamlopt_flags.sexp))))
 
 (rule
