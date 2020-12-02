@@ -12,6 +12,7 @@ depends: [
   "dune" {build & >= "1.1.1"}
   "lwt" {build}
   "lwt_ppx" {build}
+  "base" {build}
   "ppx_jane" {build}
   "cmdliner" {build}
   "amqp-client-lwt" {build}

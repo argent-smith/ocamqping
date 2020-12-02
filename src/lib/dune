@@ -2,6 +2,7 @@
  (name ocamqping)
  (wrapped false)
  (libraries ag_logger
+            base
             lwt
             lwt.unix
             cmdliner
