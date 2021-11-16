@@ -1,7 +1,7 @@
 (executable
  (public_name ocamqping)
  (name main)
- (preprocess (pps lwt_ppx ppx_jane))
+ (preprocess (pps ppx_jane))
  (flags (-safe-string))
  (libraries ocamqping cmdliner base)
  (ocamlopt_flags (:standard (:include ocamlopt_flags.sexp))))

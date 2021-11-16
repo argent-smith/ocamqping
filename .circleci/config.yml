@@ -16,7 +16,7 @@ x-job-defaults: &job_defaults
   executor:
     name: opam
     image: ocaml/opam
-    tag: alpine-ocaml-4.11
+    tag: alpine-ocaml-4.12
   depext_pkgs: conf-m4
 
 workflows:
