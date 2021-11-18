@@ -16,6 +16,6 @@ let rec main amqp_uri retry_interval retry_count log_config =
   Ag_logger.setup log_config;
   setup_signals_handling ();
   let config = Config.create ~amqp_uri ~retry_interval ~retry_count in
-  let threads = [Pinger.run config] in
-  choose threads
+  [Pinger.run config]
+  |> choose
   |> Lwt_main.run

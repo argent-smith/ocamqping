@@ -11,7 +11,6 @@ depends: [
   "ocaml" {build & >= "4.04"}
   "dune" {build & >= "1.1.1"}
   "lwt" {build}
-  "lwt_ppx" {build}
   "base" {build}
   "ppx_jane" {build}
   "cmdliner" {build}
@@ -20,6 +19,7 @@ depends: [
   "merlin" {post}
   "ocaml-lsp-server" {post}
   "ocamlformat" {post}
+  "ocamlformat-rpc" {post}
 ]
 build: [
   ["dune" "subst"] {pinned}

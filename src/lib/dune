@@ -8,5 +8,5 @@
             cmdliner
             amqp-client-lwt)
  (flags (-safe-string))
- (preprocess (pps lwt_ppx ppx_jane))
+ (preprocess (pps ppx_jane))
  (ocamlopt_flags (-O2 -safe-string)))

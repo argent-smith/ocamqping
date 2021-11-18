@@ -1,4 +1,4 @@
-FROM ocaml/opam:alpine-ocaml-4.11 as build-app
+FROM ocaml/opam:alpine-ocaml-4.12 as build-app
 
 RUN mkdir -p /home/opam/project
 WORKDIR /home/opam/project
