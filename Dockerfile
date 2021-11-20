@@ -1,13 +1,12 @@
 FROM ocaml/opam:alpine-ocaml-4.11 as build-app
 
-ARG OPAMJOBS=1
-
 RUN sudo apk add -u --no-cache musl-dev
 
-RUN mkdir -p /home/opam/project
-WORKDIR /home/opam/project
+ENV TMPDIR /tmp
 
 RUN opam switch create . 4.11.2+musl+static+flambda
+
+WORKDIR /home/opam/project
 
 ENV BUILD_STATIC_BINARY=true
 
