@@ -1,6 +1,6 @@
 FROM ocaml/opam:alpine-ocaml-4.11 as build-app
 
-RUN apk add -u --no-cache musl-dev
+RUN sudo apk add -u --no-cache musl-dev
 
 RUN mkdir -p /home/opam/project
 WORKDIR /home/opam/project
