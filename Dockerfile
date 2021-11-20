@@ -1,5 +1,7 @@
 FROM ocaml/opam:alpine-ocaml-4.11 as build-app
 
+ARG OPAMJOBS=1
+
 RUN sudo apk add -u --no-cache musl-dev
 
 RUN mkdir -p /home/opam/project
