@@ -1,9 +1,9 @@
-FROM ocaml/opam:alpine-ocaml-4.12 as build-app
+FROM ocaml/opam:alpine-ocaml-4.11 as build-app
 
 RUN mkdir -p /home/opam/project
 WORKDIR /home/opam/project
 
-RUN opam switch create . 4.11.1+musl+static+flambda
+RUN opam switch create . 4.11.2+musl+static+flambda
 
 ENV BUILD_STATIC_BINARY=true
 
