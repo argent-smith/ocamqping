@@ -2,7 +2,8 @@ FROM ocaml/opam:alpine-ocaml-4.11 as build-app
 
 RUN sudo apk add -u --no-cache musl-dev
 
-ENV TMPDIR /tmp
+RUN mount
+RUN ls -hla /
 
 RUN opam switch create . 4.11.2+musl+static+flambda
 
