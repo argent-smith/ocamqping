@@ -5,9 +5,11 @@ RUN sudo apk add -u --no-cache \
 
 WORKDIR /home/opam/project
 
-RUN rm -rf ~/.opam && \
-    opam init --disable-sandboxing \
-              -c 4.11.2+musl+static+flambda
+# RUN rm -rf ~/.opam && \
+#     opam init --disable-sandboxing \
+#               -c 4.11.2+musl+static+flambda
+
+RUN opam switch create . 4.11.2+musl+static+flambda
 
 ENV BUILD_STATIC_BINARY=true
 
