@@ -1,4 +1,4 @@
-[![argent-smith](https://circleci.com/gh/argent-smith/ocamqping.svg?style=shield)](https://circleci.com/gh/argent-smith/ocamqping)
+[![Test build](https://github.com/github/docs/actions/workflows/test_build.yml/badge.svg) [![Release published](https://github.com/github/docs/actions/workflows/publish_the_release.yml/badge.svg)
 
 # OCamqping
 
