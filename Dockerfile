@@ -1,13 +1,6 @@
-FROM ocaml/opam:alpine-ocaml-4.11 as build-app
-
-RUN sudo apk add -u --no-cache \
-    musl-dev m4
+FROM argentoff/opam:4.11.2-musl-static-flambda as build-app
 
 WORKDIR /home/opam/project
-
-RUN rm -rf ~/.opam && \
-    opam init -v --disable-sandboxing \
-              -c 4.11.2+musl+static+flambda
 
 ENV BUILD_STATIC_BINARY=true
 

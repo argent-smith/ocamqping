@@ -1,0 +1,71 @@
+name: Publish the release
+
+on:
+  push:
+    tags:
+      - v**
+    branches-ignore:
+      - '*'
+
+jobs:
+  publish:
+    name: Publish the release
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Prepare tag name from switch tag
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        run: echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      - name: Set tag, compiler and image outputs
+        id: set_tag_name
+        run: |
+          test -n "${TAG}" || TAG=default
+          IMAGE="argentoff/ocamqping"
+          echo ::set-output name=tagged_image::${IMAGE}:${TAG}
+          echo ::set-output name=tag::${TAG}
+
+      - name: Set up Docker buildX
+        id: buildx
+        uses: docker/setup-buildx-action@master
+        with:
+          install: true
+
+      - name: Login to Container Registry
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-multi-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-multi-buildx
+
+      - name: Build image
+        id: build_image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          builder: ${{ steps.buildx.outputs.name }}
+          file: Dockerfile
+          push: false
+          tags: ${{ steps.set_tag_name.outputs.tagged_image }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,mode=max,dest=/tmp/.buildx-cache-new
+          pull: true
+          load: true
+
+      - name: Move cache
+        if: ${{ success() || (failure() && steps.build_frontend.outcome == 'failure') }}
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+
+      - name: Push image
+        run: docker push ${{ steps.set_tag_name.outputs.tagged_image }}
