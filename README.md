@@ -1,4 +1,4 @@
-![Test build](https://github.com/github/docs/actions/workflows/test_build.yml/badge.svg) ![Release published](https://github.com/github/docs/actions/workflows/publish_the_release.yml/badge.svg)
+![Test build](https://github.com/argent-smith/ocamqping/actions/workflows/test_build.yml/badge.svg) ![Release published](https://github.com/argent-smith/ocamqping/actions/workflows/publish_the_release.yml/badge.svg)
 
 # OCamqping
 
