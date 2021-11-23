@@ -24,6 +24,8 @@ jobs:
         run: |
           test -n "${TAG}" || TAG=default
           IMAGE="argentoff/ocamqping"
+          echo ::set-output name=image_repo::${IMAGE}
+          echo ::set-output name=latest_image::${IMAGE}:latest
           echo ::set-output name=tagged_image::${IMAGE}:${TAG}
           echo ::set-output name=tag::${TAG}
 
@@ -55,7 +57,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           file: Dockerfile
           push: false
-          tags: ${{ steps.set_tag_name.outputs.tagged_image }},latest
+          tags: ${{ steps.set_tag_name.outputs.tagged_image }},${{ steps.set_tag_name.outputs.latest_image }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,mode=max,dest=/tmp/.buildx-cache-new
           pull: true
@@ -68,4 +70,4 @@ jobs:
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
       - name: Push image
-        run: docker push ${{ steps.set_tag_name.outputs.tagged_image }}
+        run: docker push ${{ steps.set_tag_name.outputs.image_repo }} --all-tags
