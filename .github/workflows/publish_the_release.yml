@@ -55,7 +55,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           file: Dockerfile
           push: false
-          tags: ${{ steps.set_tag_name.outputs.tagged_image }}
+          tags: ${{ steps.set_tag_name.outputs.tagged_image }},latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,mode=max,dest=/tmp/.buildx-cache-new
           pull: true
